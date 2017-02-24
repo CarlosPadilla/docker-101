@@ -1,4 +1,4 @@
 #!/bin/bash
 
-git checkout d_step_2
+git checkout d_step_1
 

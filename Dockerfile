@@ -1,11 +1,8 @@
-FROM ubuntu:xenial
+# which one is your base universe
+FROM docker/whalesay:latest
 
-RUN apt-get update && apt-get install -y build-essential nodejs-legacy npm
+# prepare your universe
+RUN apt-get -y update && apt-get install -y fortunes
 
-RUN npm install -g npm
-RUN npm install -g local-web-server
-
-COPY ./src /usr/server
-WORKDIR /usr/server
-EXPOSE 8000
-CMD [ "ws", "-p", "8000", "-d", "./"]
+# what are you gonna do with this universe-provided-energy
+CMD /usr/games/fortune -a | cowsay
