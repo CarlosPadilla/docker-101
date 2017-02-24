@@ -1,8 +1,5 @@
-FROM ubuntu:xenial
+FROM node:7
 
-RUN apt-get update && apt-get install -y build-essential nodejs-legacy npm
-
-RUN npm install -g npm
 RUN npm install -g local-web-server
 
 COPY ./src /usr/server
